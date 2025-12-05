@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:front_end/screens/dashboard.dart';
+import 'package:front_end/screens/inventory.dart';
+import 'package:front_end/screens/notifications.dart';
+import 'package:front_end/screens/settings.dart';
 
 class NavigateBar extends StatefulWidget{
   const NavigateBar({super.key});
@@ -13,6 +17,27 @@ class _NavigateBarState extends State<NavigateBar> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      if (_selectedIndex == 0) {
+        Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (_) => const DashboardScreen()),
+          (Route<dynamic> route) => false,
+        );
+      } else if (_selectedIndex == 1) {
+        Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (_) => const InventoryScreen()),
+          (Route<dynamic> route) => false,
+        );
+      } else if (_selectedIndex == 2) {
+        Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (_) => const NotificationsScreen()),
+          (Route<dynamic> route) => false,
+        );
+      } else if (_selectedIndex == 3) {
+       Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (_) => const SettingsScreen()),
+          (Route<dynamic> route) => false,
+        );
+      }
     });
   }
 
