@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front_end/screens/dashboard.dart';
 import 'package:front_end/screens/register.dart';
 
 class LoginForm extends StatefulWidget {
@@ -144,7 +145,12 @@ class _LoginFormState extends State<LoginForm> {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) => const DashboardScreen()),
+                  (route) => false,
+                );
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
                 foregroundColor: Colors.black,
