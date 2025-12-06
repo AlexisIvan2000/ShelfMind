@@ -51,7 +51,7 @@ class _NavigateBarState extends State<NavigateBar> {
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.inventory),
-          label: 'Items',
+          label: 'Inventory',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.notifications_on),
